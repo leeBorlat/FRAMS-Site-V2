@@ -300,13 +300,30 @@ body.dark .switch::before{
     color: var(--text-color);
     padding: 3vh 5vw;
 }
-.classes-div{
-	
+.class-number{
+    padding-left: 8vw;
+	padding-bottom: 1vh;
+	font-weight: bold;
+    width: calc(100% - 250px);
+	font-size: 1rem;
+}
+.interface-container{
+	display:flex;
+}
+.facecam-area{
 	background-color: white;
-	margin-top:5vh;
 	margin-left:8vw;
-	width: 70vw;
-	height: 40vh;
+	width: 50%;
+	height: 50vh;
+	border-radius: 5px 5px 0 0;
+	box-shadow:  0 0 20px rgba(0,0,0,0.15);
+	overflow-x:auto;
+}
+.table-area{
+	background-color: white;
+	margin-left:1vw;
+	width: 40%;
+	height: 50vh;
 	border-radius: 5px 5px 0 0;
 	box-shadow:  0 0 20px rgba(0,0,0,0.15);
 	overflow-x:auto;
@@ -338,7 +355,7 @@ body.dark .switch::before{
 .content-table tbody tr:nth-of-type(even){
 	background-color: #f3f3f3; 
 }
-.next-button{
+.summary-button{
 	background-color:#2D2A4C;
 	margin-top: 2%;
 	margin-left: 8vw;
@@ -352,7 +369,24 @@ body.dark .switch::before{
 	overflow:hidden;
 	
 }
-.next-button:hover{
+.end-button{
+	background-color:#2D2A4C;
+	margin-top: 2%;
+	float:right;
+	width: 12rem;
+	height: 47px;
+	color: white;
+	border: none;
+	letter-spacing: 5px;
+	font-weight: bold;
+	font-size: 1vw;
+	overflow:hidden;
+}
+.summary-button:hover{
+	background-color:#3D597F;
+	cursor: pointer;
+}
+.end-button:hover{
 	background-color:#3D597F;
 	cursor: pointer;
 }
