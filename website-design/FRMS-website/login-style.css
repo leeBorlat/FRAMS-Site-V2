@@ -1,0 +1,16 @@
+@charset "utf-8";
+body{
+	background-image: url("image/background.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+	height: auto;
+	width: 100%
+};
+
+.container-fluid {
+	background-color: red;
+	padding-top: 50%;
+	height: 25%;
+	width: 50%;
+};
+
