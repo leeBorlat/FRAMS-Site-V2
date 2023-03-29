@@ -300,6 +300,13 @@ body.dark .switch::before{
     color: var(--text-color);
     padding: 3vh 5vw;
 }
+.class-number{
+    padding-left: 8vw;
+	padding-bottom: .5vh;
+	font-weight: bold;
+    width: calc(100% - 250px);
+	font-size: 2rem;
+}
 .classes-div{
 	
 	background-color: white;
@@ -338,10 +345,10 @@ body.dark .switch::before{
 .content-table tbody tr:nth-of-type(even){
 	background-color: #f3f3f3; 
 }
-.next-button{
+.download-button{
 	background-color:#2D2A4C;
 	margin-top: 2%;
-	margin-left: 8vw;
+	margin-left: 66vw;
 	width: 12vw;
 	height: 4.7vh;
 	color: white;
@@ -352,7 +359,7 @@ body.dark .switch::before{
 	overflow:hidden;
 	
 }
-.next-button:hover{
+.download-button:hover{
 	background-color:#3D597F;
 	cursor: pointer;
 }
