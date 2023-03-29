@@ -1,101 +1,103 @@
 <!DOCTYPE html>
-  <!-- Coding by CodingLab | www.codinglabweb.com -->
+<!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="style-for-class-interface.css">
-    
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-    
-    <!--<title>Dashboard Sidebar Menu</title>--> 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!----======== CSS ======== -->
+<link rel="stylesheet" href="style-for-class-interface.css">
+
+<!----===== Boxicons CSS ===== -->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+
+<!--<title>Dashboard Sidebar Menu</title>-->
 </head>
 <body>
 <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-              <span class="image">
-                <img src="images/logo.png" alt="logo-icon">
-                </span>
-
-                <div class="text logo-text">
-                  <p> <span class="name">FRMS</span></p>
-                    <p> <span class="description">Attendance System</span> </p>
-                </div>
-            </div>
-
-          <i class='bx bx-chevron-right toggle'></i>
-        </header>
-
-  <div class="menu-bar">
-            <div class="menu">
-
-              <ul class="menu-links">
-                    <li class="nav-link">
-                        <i class='bx bx-home-alt icon' ></i>
-							<span class="text nav-text">Dashboard</span>
-                        </li>
-
-                    <li class="nav-link">
-                        <a href="index.html">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-							
-                            <span class="text nav-text">Summary&nbsp;</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Class&nbsp; Statistics</span>
-                        </a>
-                    </li>
-              </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="">
-                  <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
-                  </a>
-                </li>
-</div>
+  <header>
+    <div class="image-text">
+      <span class="image">
+      <img src="images/logo.png" alt="logo-icon">
+      </span>
+      <div class="text logo-text">
+        <p>
+          <span class="name"> FRMS
+          </span>
+        </p>
+        <p>
+          <span class="description"> Attendance System
+          </span>
+        </p>
+      </div>
     </div>
-
-  </nav>
-    
+    <i class='bx bx-chevron-right toggle'></i>
+  </header>
+  <div class="menu-bar">
+    <div class="menu">
+      <ul class="menu-links">
+        <li class="nav-link">
+          <i class='bx bx-home-alt icon' ></i>
+          <span class="text nav-text"> Dashboard
+          </span>
+        </li>
+        <li class="nav-link">
+          <a href="index.html">
+          <i class='bx bx-bar-chart-alt-2 icon' ></i>
+          <span class="text nav-text"> Summary&nbsp;
+          </span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="#">
+          <i class='bx bx-bell icon'></i>
+          <span class="text nav-text"> Class&nbsp; Statistics
+          </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="bottom-content">
+      <li class="">
+        <a href="#">
+        <i class='bx bx-log-out icon' ></i>
+        <span class="text nav-text"> Logout
+        </span>
+        </a>
+      </li>
+    </div>
+  </div>
+</nav>
 <section class="home">
-  <div class="class-number">CSC 0321-2&nbsp; &nbsp;</div>
+<div class="class-number">
+  CSC 0321-2&nbsp; &nbsp;
+</div>
 <div class ="interface-container">
-	<div class="facecam-area">
-	</div>
-	<div class = "table-area">
-	<table class="content-table">
-			<thead>
-			  <tr>
-				  <th>Name</th>
-				  <th>Status</th>
-			  </tr>
-			</thead>
-			<tbody>
-				<tr>
-				  <td> BORLAT					</td>
-					<td>TIME IN: 10:38</td>
-				</tr>
-		  </tbody>
-	  </table>
-	</div>	
-	</div>
+  <div class="facecam-area">
+  </div>
+  <div class = "table-area">
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> BORLAT </td>
+          <td>TIME IN: 10:38</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button type = "button" class = "end-button" >END</button>
 <a href="index.html">
 <button type = "button" class = "summary-button" >VIEW SUMMARY</button>
 </a>
-<button type = "button" class = "end-button" >END</button>
 
 <script>
         const body = document.querySelector('body'),
@@ -125,6 +127,5 @@ modeSwitch.addEventListener("click" , () =>{
     }
 });
     </script>
-
 </body>
 </html>
