@@ -362,4 +362,54 @@ body.dark .switch::before {
 body.dark .home .text {
   color: var(--text-color);
 }
-.description {}
+
+@media only screen and (max-width: 480px){
+
+
+  .class-number{
+    padding-left: 12vw;
+    padding-bottom: auto;
+    font-weight: bold;
+    width: calc(100% + 250px);
+    font-size: 1rem;
+ }
+ .interface-container {
+  display: flex;
+  flex-direction: column;
+}
+.facecam-area {
+  width: 400%;
+  height: 600vh;
+  }
+
+.table-area {
+  order: 2;
+  width: 200%;
+  height: 500vh;
+  margin-top: 50px;
+}
+.content-table {
+  font-size: large;
+  overflow: scroll;
+}
+.summary-button {
+	margin-top: 2%;
+  margin-left: 2vw;
+	width: 20vw;
+	height: 47px;
+	font-size: 2vw;
+  font-weight: medium;
+	}
+.end-button {
+	
+	margin-top: 2%;
+	margin-left: 8vw;
+	width: 20vw;
+	height: 47px;
+	border: none;
+	letter-spacing: 5px;
+	font-weight: medium;
+	font-size: 3vw;
+	overflow: hidden;
+}
+}

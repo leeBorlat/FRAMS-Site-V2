@@ -367,3 +367,18 @@ body.dark .home .text{
 }
 .description {
 }
+@media only screen and (max-width: 480px){
+    .classes-div{
+        margin-top:5vh;
+        margin-left:8vw;
+        width: 65vw;
+        height: 40vh;
+        overflow-x:auto;
+    }
+    .next-button{
+        margin-left: 8vw;
+        width: 12vw;
+        height: 4vh;
+        font-size: 1vh;       
+    }
+  }

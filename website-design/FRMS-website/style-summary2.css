@@ -355,7 +355,7 @@ body.dark .switch::before{
 	border: none;
 	letter-spacing: 5px;
 	font-weight: bold;
-	font-size: 2vh;
+	font-size: 1vh;
 	overflow:hidden;
 	
 }
@@ -374,3 +374,32 @@ body.dark .home .text{
 }
 .description {
 }
+@media only screen and (max-width: 480px){
+    .class-number{
+        padding-left: 12vw;
+        padding-bottom: auto;
+        font-weight: bold;
+        width: calc(100% + 250px);
+        font-size: 1rem;
+     }
+    .classes-div{
+	
+        background-color: white;
+        margin-top:5vh;
+        margin-left:8vw;
+        width: 65vw;
+        height: 50vh;
+        overflow-x:auto;
+    }
+    .download-button{
+        
+        margin-top: 2%;
+        margin-left: 50vw;
+        width: 23vw;
+        height: 4.7vh;
+        border: none;
+        letter-spacing: 1vh;
+        font-size: 1vh;
+        overflow:hidden;
+    }
+  }
