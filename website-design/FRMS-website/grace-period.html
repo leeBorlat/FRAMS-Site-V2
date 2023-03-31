@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!----======== CSS ======== -->
+<link rel="stylesheet" href="style-grace-period.css">
+
+<!----===== Boxicons CSS ===== -->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+
+<!--<title>Dashboard Sidebar Menu</title>-->
+</head>
+<body>
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="images/logo.png" alt="logo-icon">
+            </span>
+            <div class="text logo-text">
+                <p>
+                    <span class="name"> FRMS
+                    </span>
+                </p>
+                <p>
+                    <span class="description"> Attendance System
+                    </span>
+                </p>
+            </div>
+        </div>
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="class-interface.html">
+                    <i class='bx bx-home-alt icon' ></i>
+                    <span class="text nav-text"> Dashboard
+                    </span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="index.html">
+                    <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                    <span class="text nav-text"> Summary
+                        &nbsp;
+                    </span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">
+                    <i class='bx bx-bell icon'></i>
+                    <span class="text nav-text"> Class
+                        &nbsp; 
+                        Statistics
+                    </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                <i class='bx bx-log-out icon' ></i>
+                <span class="text nav-text"> Logout
+                </span>
+                </a>
+            </li>
+        </div>
+    </div>
+</nav>
+<section class="home">
+<div class="class-number">CSC 0321-2
+    &nbsp; 
+    &nbsp;
+</div>
+<div class="classes-div">
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Student No.</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Regular/Irregular</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>202010516 </td>
+                <td>Borlat</td>
+                <td>Lee Ryan Edward</td>
+                <td>Regular</td>
+            </tr>
+            <tr>
+                <td>202010516 </td>
+                <td>Borlat</td>
+                <td>Lee Ryan Edward</td>
+                <td>Regular</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="grace-period-text">Grace period:
+    &nbsp; 
+    &nbsp;
+</div>
+<div class="timer">
+    <span class="timer__part timer__part--minutes"> 00
+    </span>
+    <span class="timer__part"> :
+    </span>
+    <span class="timer__part timer__part--seconds"> 00
+    </span>
+    <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+    <span class="material-icons"> play_arrow
+    </span>
+    </button>
+    <button type="button" class="timer__btn timer__btn--reset">
+    <span class="material-icons"> timer
+    </span>
+    </button>
+</div>
+<button type = "button" class = "download-button" >DOWNLOAD</button>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+    var ding;
+    function preload() {
+        ding = loadSound("ding.mp3");
+    }
+    class Timer {
+        
+  constructor(root) {
+    root.innerHTML = Timer.getHTML();
+
+    this.el = {
+      minutes: root.querySelector(".timer__part--minutes"),
+      seconds: root.querySelector(".timer__part--seconds"),
+      control: root.querySelector(".timer__btn--control"),
+      reset: root.querySelector(".timer__btn--reset")
+    };
+
+    this.interval = null;
+    this.remainingSeconds = 0;
+
+    this.el.control.addEventListener("click", () => {
+      if (this.interval === null) {
+        this.start();
+      } else {
+        this.stop();
+      }
+    });
+
+    this.el.reset.addEventListener("click", () => {
+      const inputMinutes = prompt("Enter number of minutes:");
+
+      if (inputMinutes < 60) {
+        this.stop();
+        this.remainingSeconds = inputMinutes * 60;
+        this.updateInterfaceTime();
+      }
+    });
+  }
+
+  updateInterfaceTime() {
+    const minutes = Math.floor(this.remainingSeconds / 60);
+    const seconds = this.remainingSeconds % 60;
+
+    this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+    this.el.seconds.textContent = seconds.toString().padStart(2, "0");
+  }
+
+  updateInterfaceControls() {
+    if (this.interval === null) {
+      this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
+      this.el.control.classList.add("timer__btn--start");
+      this.el.control.classList.remove("timer__btn--stop");
+    } else {
+      this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
+      this.el.control.classList.add("timer__btn--stop");
+      this.el.control.classList.remove("timer__btn--start");
+    }
+  }
+
+  start() {
+    if (this.remainingSeconds === 0) return;
+
+    this.interval = setInterval(() => {
+      this.remainingSeconds--;
+      this.updateInterfaceTime();
+
+      if (this.remainingSeconds === 0) {
+        this.stop();
+        ding.play();
+      }
+    }, 1000);
+
+    this.updateInterfaceControls();
+  }
+
+  stop() {
+    clearInterval(this.interval);
+
+    this.interval = null;
+
+    this.updateInterfaceControls();
+  }
+
+  static getHTML() {
+    return `
+			<span class="timer__part timer__part--minutes">00</span>
+			<span class="timer__part">:</span>
+			<span class="timer__part timer__part--seconds">00</span>
+			<button type="button" class="timer__btn timer__btn--control timer__btn--start">
+				<span class="material-icons">play_arrow</span>
+			</button>
+			<button type="button" class="timer__btn timer__btn--reset">
+				<span class="material-icons">timer</span>
+			</button>
+		`;
+  }
+}
+
+new Timer(
+	document.querySelector(".timer")
+);
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
+        
+    }
+})
+	
+
+    </script>
+</body>
+</html>
