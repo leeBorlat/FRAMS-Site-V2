@@ -3,15 +3,15 @@ FRAMS Website Protoype
 
 ## TODO:
 
-### Design
+### Design (HTML, CSS, Javascript)
 - [ ] Responsiveness
 - [ ] Mobile view
-
-### Web
+ 
+### Web (Python and Flask)
 - [ ] Face Recog
 - [ ] Attendance Summary
 - [ ] Connect to database
 
-### Backend
+### Backend (Firebase)
 - [ ] Database
 - [ ] Cloud Server
