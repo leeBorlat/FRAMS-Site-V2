@@ -1,17 +1,17 @@
 # FRAMS-Site-V2
 FRAMS Website Protoype
 
-# TODO:
+## TODO:
 
-## Design
+### Design
 - [] Responsiveness
 - [] Mobile view
 
-## Web
+### Web
 - [] Face Recog
 - [] Attendance Summary
 - [] Connect to database
 
-## Backend
+### Backend
 - [] Database
 - [] Cloud Server
